@@ -3,7 +3,9 @@ import { useState, useEffect } from "react";
 
 function App() {
   //add useState for all state variables
-
+  const [name, setName] = useState("");
+  const [gender, setGender] = useState();
+  const [age, setAge] = useState();
   //load locationStorage
   useEffect(() => {
     const items = localStorage.getItem("items");
@@ -47,8 +49,9 @@ function App() {
         {/* display tables for all persons */}
         <p className="is-4 title has-text-centered">Pet List</p>
         {/* sample table */}
-        <ItemTable name={"Coco"} gender={"Male"} age={"5"} />
-        <p>Your name and code here</p>
+        <ItemTable name={items.name} gender={items.gender} age={items.age} />
+
+        <p>Naritsararat Tawiwuttirat 620612152</p>
       </div>
     </div>
   );
